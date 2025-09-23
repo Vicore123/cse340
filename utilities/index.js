@@ -57,6 +57,29 @@ Util.buildClassificationGrid = async function(data){
   return grid
 }
 
+Util.buildItem = async function(vehicle){
+  if(vehicle){
+    const grid = `
+      <div id="car-info">
+        <img src="${vehicle.inv_image}" alt="Image of ${vehicle.inv_make} ${vehicle.inv_model} on CSE Motors">
+        <div>
+          <h3>${vehicle.inv_make} ${vehicle.inv_model} Details</h3>
+          <p><strong>Price: $${new Intl.NumberFormat('en-US').format(vehicle.inv_price)}</strong></p>
+          <p><strong>Description: </strong>${vehicle.inv_description}</p>
+          <p id="color"><strong>Color: </strong>${vehicle.inv_color}</p>
+          <p><strong>Miles:</strong> ${new Intl.NumberFormat('en-US').format(vehicle.inv_miles)}</p>
+        </div>
+      </div>
+    `
+    return grid
+
+  } else {
+    return `<p class="notice">Sorry, vehicle details could not be found.</p>`
+  }
+}
+
+
+
 
 /* ****************************************
  * Middleware For Handling Errors
