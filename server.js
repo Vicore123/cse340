@@ -6,17 +6,17 @@
  * Require Statements
  *************************/
 const baseController = require("./controllers/baseController")
-const express = require("express")
-const expressLayouts = require("express-ejs-layouts")
-const env = require("dotenv").config()
-const app = express()
-const static = require("./routes/static")
 const inventoryRoute = require("./routes/inventoryRoute")
 const accountRoute = require("./routes/accountRoute")
-const utilities = require("./utilities/")
+const expressLayouts = require("express-ejs-layouts")
 const session = require("express-session")
-const pool = require('./database/')
+const utilities = require("./utilities/")
 const bodyParser = require("body-parser")
+const static = require("./routes/static")
+const env = require("dotenv").config()
+const pool = require('./database/')
+const express = require("express")
+const app = express()
 
 
 /* ***********************
