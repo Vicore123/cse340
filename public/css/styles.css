@@ -266,8 +266,8 @@ footer {
   padding: 30px;
   border-radius: 8px;
   color: #fff;
-  width: 320px;
-  text-align: center;
+  max-width: 320px;
+  /* text-align: center; */
   margin: auto;
 }
 
@@ -281,6 +281,28 @@ footer {
   width: 90%;
   padding: 10px;
   margin-bottom: 15px;
+  border-radius: 0.5rem;
+}
+.login-box select {
+  font-size: 1rem;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 0.5rem;
+}
+.login-box textarea {
+  width: 90%;
+  height: 5rem;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 0.5rem;
+}
+
+
+.login-box input:valid {
+  background-color: #acffb1;
+}
+.login-box input:invalid {
+  background-color: #ffacac;
 }
 
 .login-box button {
