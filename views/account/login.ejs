@@ -4,6 +4,8 @@
   res.redirect('/')
 } %>
 
+<%- messages() %>
+
 <% if (errors) { %>
   <ul class="notice">
   <% errors.array().forEach(error => { %>
@@ -28,3 +30,7 @@
     <p>No account? <a href="./register">Sign-up</a></p>
   </div>
 </div>
+
+<!-- Test Account:
+     vinici@gamail.com
+     @1A3b55555555-->

@@ -9,6 +9,7 @@ const baseController = require("./controllers/baseController")
 const inventoryRoute = require("./routes/inventoryRoute")
 const accountRoute = require("./routes/accountRoute")
 const expressLayouts = require("express-ejs-layouts")
+const cookieParser = require("cookie-parser")
 const session = require("express-session")
 const utilities = require("./utilities/")
 const bodyParser = require("body-parser")
@@ -42,6 +43,9 @@ app.use(function(req, res, next){
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+app.use(cookieParser())
+app.use(utilities.checkJWTToken)
+
 
 /* ***********************
  * View Engine and Templates
@@ -81,6 +85,7 @@ app.use(async (req, res, next) => {
 app.use(async (err, req, res, next) => {
   let nav = await utilities.getNav()
   console.error(`Error at: "${req.originalUrl}": ${err.message}`)
+  message = ""
   if(err.status == 404){ message = 'Sorry, we appear to have lost that page.'}
   if(err.status == 500){ message = 'Oh no! There was a crash. Maybe try a different route?'}
   res.render("errors/error", {
