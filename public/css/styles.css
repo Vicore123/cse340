@@ -335,3 +335,25 @@ footer {
   margin-left: 1rem;
   margin-bottom: 5px;
 }
+
+
+#classificationList {
+  margin: 10px 0;
+  padding: 5px;
+}
+
+#inventoryDisplay {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#inventoryDisplay th, 
+#inventoryDisplay td {
+  border: 1px solid #ccc;
+  padding: 6px;
+}
+
+#inventoryDisplay th {
+  background: #eee;
+}
